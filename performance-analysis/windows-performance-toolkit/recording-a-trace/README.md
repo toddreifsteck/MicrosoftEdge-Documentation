@@ -6,6 +6,7 @@ Shut down as many running programs as possible to avoid noise in the trace that 
 
 ## 2. Launch Windows Performance Recorder (WPR) and select options
 Launch WPR and ensure the More options is expanded. Check the Edge Browser and HTML Responsiveness analysis boxes.
+
 ![Windows Performance Record Options](media/WPRUI-Options.PNG)
 
 #### Tips and Tricks for Gathering Traces
@@ -20,7 +21,9 @@ Launch WPR and ensure the More options is expanded. Check the Edge Browser and H
 
 ## 3. Record the scenario
 Click Start to begin recording. You will observe that the tool will report the size of the buffer it is using which can be helpful to understand how large the file generated will be. Execute the scenario that is being measured then click Stop and immediately Save the trace. Saving immediately after stopping will help keep the trace file small.
+
 ![Windows Performance Record Start](media/WPRUI-Recording.PNG)
+
 #### After Saving
 ![Windows Performance Record Start](media/WPRUI-SaveComplete.PNG)
 
