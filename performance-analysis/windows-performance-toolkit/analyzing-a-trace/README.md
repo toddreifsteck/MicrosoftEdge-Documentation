@@ -4,8 +4,11 @@
 Open Windows Performance Analyzer (WPA) then open the ETL file to be analyzed using File/Open.
 
 ## Load Symbols and Apply HTML Analysis Profile
-#### WARNING: Loading symbols will require a large download and will take a significant amount of time on a typicaly internet connection.
-Immediately Load Symbols by choosing Trace/Load Symbols from the menu. The symbols will be cached to disk and future traces will be load symbols much faster. After symbols begin loading, apply the Html Analysis Profile by selecting Profiles/Apply from the menu then clicking Browse Catalog. Choose HtmlResponsivenessAnalysis.wpaProfile and the profile will load a number of graphs and tables to allow analysis to begin.
+### WARNING: Loading symbols for the first time will require a large download and will take a significant amount of time on a typically internet connection.
+### Tip: Symbol loading can be made significantly faster by restricting symbol loading to Microsoft Edge and web apps. This is done by Trace/Configure Symbol Paths and altering Load Settings restricted to MicrosoftEdgeCP.exe and WWAHost.exe.
+![Symbol Restrictions](media/WPA-SymbolRestrictions.PNG)
+
+Immediately load symbols by choosing Trace/Load Symbols from the menu. The symbols will be cached to disk and future traces will load symbols much faster. After symbols begin loading, apply the Html Analysis Profile by selecting Profiles/Apply from the menu then clicking Browse Catalog. Choose HtmlResponsivenessAnalysis.wpaProfile and the profile will load a number of graphs and tables to allow analysis to begin. Profiles contain a set of graphs used for analysis. For nearly all web site investigations, we recommend starting with this profile. 
 
 ![Big Picture](media/WPA-BigPicture.PNG)
 

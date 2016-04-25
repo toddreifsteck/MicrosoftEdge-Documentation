@@ -4,11 +4,11 @@ Complete Windows Performance Toolkit (WPT) documentation can be found at [https:
 
 To begin working with WPT, please follow the following steps:
 
-# [1. Install Windows 10 SDK](https://dev.windows.com/en-US/downloads/windows-10-sdk)
+## [1. Install Windows Performance Toolkit](installing-wpt)
 The only feature required is the Windows Performance Toolkit.
 
-# [2. Gathering a performance trace](recording-a-trace)
+## [2. Gathering a performance trace](recording-a-trace)
 Go over the steps to record a trace using Windows Performance Recorder.
 
-# [3. Analyzing a performance trace](analyzing-a-trace)
+## [3. Analyzing a performance trace](analyzing-a-trace)
 Go over the steps to analyze a trace using Windows Performance Analyzer.
