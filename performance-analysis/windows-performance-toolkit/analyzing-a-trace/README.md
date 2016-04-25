@@ -22,7 +22,7 @@ One important tip is to remove the Trace Rundown section by zooming in on the re
 ## The Html Responsiveness Analysis Profile creates 4 tabs:
 **Big Picture** - This is really valuable to confirm there are no unexpected sources of CPU activity and the browser indeed is using all available resources. Check CPU usage and confirm that no processes contribute significantly to CPU usage other than the browser.
 
-**Frame Analysis** - This is the most used section for basic analysis. The CPU Usage (Attributed) graph enables a quick glance understanding of the subsystems responsible for CPU usage. Breaking down the samples in the CPU Usage (Sampled) on the HTML UI Thread by CPU Breakdown is most helpful for identifying critical performance bottlenecks.
+**Frame Analysis** - This is the most used section for basic analysis. The CPU Usage (Attributed) graph enables a quick glance understanding of the subsystems responsible for CPU usage. Breaking down the samples in the CPU Usage (Sampled) table on the HTML UI Thread is most helpful for identifying critical performance bottlenecks.
 
 **Thread Delay Analysis** - Typically used by Microsoft Edge developers to investigate when one thread is blocked and waiting on another. Rarely useful to web developers.
 
@@ -31,12 +31,14 @@ One important tip is to remove the Trace Rundown section by zooming in on the re
 ## In Frame Analysis, investigate what is using the CPU
 In the Frame Analysis tab, the CPU Usage (Sampled) table is where most analysis is conducted. By expanding the various processes, the JavaScript and browser code that is taking the most CPU can be identified. It is very common that a single bit of JavaScript is responsible for a performance issue and a bit of work to optimize it can make a significant difference.
 
-## Trick for bottom's up DOM call analysis
+## Trick for bottom up DOM call analysis
+Bottom up DOM call analysis can be useful for identifying the JavaScript code that is responsible for taking up the majority of time taken in a scenario. This is especially helpful when many top level calls are re-using the same JavaScript libraries.
+
 Start by looking at CPU Usage (Sampled) Breakdown by Process, Thread, Activity, Stack. Click on any cell in Stack column. Press Ctrl+F and search for "ExternalFunctionThunk". (NOTE: This only works if you have successfully loaded symbols!)
 
 ![Search For ExternalFunctionThunk](media/WPA-ExternalFunctionThunk.png)
 
-After finding any line with ExternalFunctionThunk (for context this is interface from the JavaScript engine, Chakra, to the Microsoft Edge engine. It shows where code bridges to browser from JavaScript execution. Right-click on it and select View Callees/By module. This gives a list of top browser engine functions with weights (in milliseconds).
+After finding any line with ExternalFunctionThunk (this is interface from the JavaScript engine, Chakra, to the Microsoft Edge engine. It shows where code bridges to browser from JavaScript execution. Right-click on it and select View Callees/By module. This gives a list of top browser engine functions with weights (in milliseconds).
 
 ![View Callees](media/WPA-ViewCallees.png)
 
