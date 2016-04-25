@@ -17,12 +17,12 @@ Immediately load symbols by choosing Trace/Load Symbols from the menu. The symbo
 ## Zoom to remove Trace rundown
 One important tip is to remove the Trace Rundown section by zooming in on the remaining section. This can be done by left clicking, holding and selecting the region to be zoomed. Then right click and choose Zoom. This will affect all graphs and charts on the active tab.
 
-![Big Picture](media/WPA-PostZoom.PNG)
+![Post Zoom](media/WPA-PostZoom.PNG)
 
 ## The Html Responsiveness Analysis Profile creates 4 tabs:
 **Big Picture** - This is really valuable to confirm there are no unexpected sources of CPU activity and the browser indeed is using all available resources. Check CPU usage and confirm that no processes contribute significantly to CPU usage other than the browser.
 
-**Frame Analysis** - This is the most used section for basic analysis. CPU Usage (Attributed) HTML UI Thread CPU Breakdown should show you detailed browser (Microsoft Edge) CPU usage attributed to a specific subsystem.
+**Frame Analysis** - This is the most used section for basic analysis. The CPU Usage (Attributed) graph enables a quick glance understanding of the subsystems responsible for CPU usage. Breaking down the samples in the CPU Usage (Sampled) on the HTML UI Thread by CPU Breakdown is most helpful for identifying critical performance bottlenecks.
 
 **Thread Delay Analysis** - Typically used by Microsoft Edge developers to investigate when one thread is blocked and waiting on another. Rarely useful to web developers.
 
