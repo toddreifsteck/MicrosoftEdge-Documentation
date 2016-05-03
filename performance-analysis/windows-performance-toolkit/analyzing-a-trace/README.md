@@ -8,16 +8,16 @@ Open Windows Performance Analyzer (WPA) then open the ETL file to be analyzed us
 
 **Tip:** Symbol loading can be made significantly faster by restricting symbol loading to Microsoft Edge and web apps. This is done by Trace/Configure Symbol Paths and altering Load Settings restricted to MicrosoftEdgeCP.exe and WWAHost.exe.
 
-![Symbol Restrictions](media/WPA-SymbolRestrictions.PNG)
+![Symbol Restrictions](../../media/WPA-SymbolRestrictions.PNG)
 
-Immediately load symbols by choosing Trace/Load Symbols from the menu. The symbols will be cached to disk and future traces will load symbols much faster. After symbols begin loading, apply the Html Analysis Profile by selecting Profiles/Apply from the menu then clicking Browse Catalog. Choose HtmlResponsivenessAnalysis.wpaProfile and the profile will load a number of graphs and tables to allow analysis to begin. Profiles contain a set of graphs used for analysis. For nearly all web site investigations, we recommend starting with this profile. 
+Immediately load symbols by choosing Trace/Load Symbols from the menu. The symbols will be cached to disk and future traces will load symbols much faster. After symbols begin loading, apply the Html Analysis Profile by selecting Profiles/Apply from the menu then clicking Browse Catalog. Choose HtmlResponsivenessAnalysis.wpaProfile and the profile will load a number of graphs and tables to allow analysis to begin. Profiles contain a set of graphs used for analysis. For nearly all web site investigations, we recommend starting with this profile.
 
-![Big Picture](media/WPA-BigPicture.PNG)
+![Big Picture](../../media/WPA-BigPicture.PNG)
 
 ## Zoom to remove Trace rundown
 One important tip is to remove the Trace Rundown section by zooming in on the remaining section. This can be done by left clicking, holding and selecting the region to be zoomed. Then right click and choose Zoom. This will affect all graphs and charts on the active tab.
 
-![Post Zoom](media/WPA-PostZoom.PNG)
+![Post Zoom](../../media/WPA-PostZoom.PNG)
 
 ## The Html Responsiveness Analysis Profile creates 4 tabs:
 **Big Picture** - This is really valuable to confirm there are no unexpected sources of CPU activity and the browser indeed is using all available resources. Check CPU usage and confirm that no processes contribute significantly to CPU usage other than the browser.
@@ -36,10 +36,10 @@ Bottom up DOM call analysis can be useful for identifying the JavaScript code th
 
 Start by looking at CPU Usage (Sampled) Breakdown by Process, Thread, Activity, Stack. Click on any cell in Stack column. Press Ctrl+F and search for "ExternalFunctionThunk". (NOTE: This only works if you have successfully loaded symbols!)
 
-![Search For ExternalFunctionThunk](media/WPA-ExternalFunctionThunk.png)
+![Search For ExternalFunctionThunk](../../media/WPA-ExternalFunctionThunk.png)
 
 After finding any line with ExternalFunctionThunk (this is interface from the JavaScript engine, Chakra, to the Microsoft Edge engine. It shows where code bridges to browser from JavaScript execution. Right-click on it and select View Callees/By module. This gives a list of top browser engine functions with weights (in milliseconds).
 
-![View Callees](media/WPA-ViewCallees.png)
+![View Callees](../../media/WPA-ViewCallees.png)
 
 To find the JavaScript calling that API, right click on it and select View Callers/By function then expand the tree to find the JavaScript responsible by weight.
