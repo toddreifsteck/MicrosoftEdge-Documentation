@@ -1,14 +1,12 @@
-# Investigating Performance of a Web Site with Windows Performance Toolkit
+# Investigating website performance with Windows Performance Toolkit
 
-Complete Windows Performance Toolkit (WPT) documentation can be found at [https://msdn.microsoft.com/en-us/library/windows/hardware/dn927310(v=vs.85).aspx](https://msdn.microsoft.com/en-us/library/windows/hardware/dn927310(v=vs.85).aspx).
+Here's how to get started using the Windows Performance Toolkit to analyze your website. First you'll want to download the [Windows 10 Assessment and Deployment Kit (ADK)](https://msdn.microsoft.com/en-us/windows/hardware/dn913721.aspx), and select the *Windows Performance Toolkit* option during installation:
+![ADK Installation Options](../../media/ADK-InstallOptions.PNG)
 
-To begin working with WPT, please follow the following steps:
+## Record a performance trace
+Next, set up your user scenario and prepare to [gather a trace using Windows Performance Recorder](recording-a-trace).
 
-## [1. Install Windows Performance Toolkit](installing-wpt)
-The only feature required is the Windows Performance Toolkit.
+## Analyze a performance trace
+With your data in hand, you can then [analyze the trace using use Windows Performance Analyzer](analyzing-a-trace).
 
-## [2. Gathering a performance trace](recording-a-trace)
-Go over the steps to record a trace using Windows Performance Recorder.
-
-## [3. Analyzing a performance trace](analyzing-a-trace)
-Go over the steps to analyze a trace using Windows Performance Analyzer.
+To learn more about what's included in the Windows Performance Toolkit check out the full [WPT documentation on MSDN](https://msdn.microsoft.com/en-us/library/windows/hardware/dn927310(v=vs.85).aspx).
