@@ -5,7 +5,7 @@ Here's how to analyze your web scenario performance data using the *Windows Perf
 ## 1. Open Windows Performance Analyzer (WPA)
 Launch Windows Performance Analyzer and open the *.etl* file to be analyzed (**File** > **Open...**).
 
-## 2. Load symbols and apply HTML analysis profile
+## 2. Load symbols and apply the *HTML analysis* profile
 **WARNING:** Loading symbols for the first time will require a large download and will take a significant amount of time on a typical internet connection.
 
 Load your symbols by selecting **Trace** > **Load Symbols** from the menu. The symbols will be cached to disk and future traces will load symbols much faster.
@@ -14,9 +14,7 @@ You can load symbols significantly faster by restricting the loading to Microsof
 
 ![Symbol Restrictions](../../media/WPA-SymbolRestrictions.PNG)
 
- After symbols begin loading, apply the *Html Analysis Profile*:
-
- **Profiles** > **Apply...** > **Browse Catalog...** > **HtmlResponsivenessAnalysis.wpaProfile**
+ After symbols begin loading, apply the *Html Analysis Profile* (**Profiles** > **Apply...** > **Browse Catalog...** > **HtmlResponsivenessAnalysis.wpaProfile**)
 
   The profile will load several graphs and tables to for your analysis. For nearly all web site investigations, we recommend starting with this profile.
 
@@ -39,12 +37,12 @@ The *Html Responsiveness* analysis profile provides four tabs:
 
 **Frame Analysis** - This section is used for basic analysis. The *CPU Usage (Attributed)* graph enables a quick glance for understanding of the subsystems responsible for CPU usage. Breaking down the samples in the *CPU Usage (Sampled)* table on the *HTML UI Thread* is helpful for identifying critical performance bottlenecks.
 
-**Trace Markers** - This section shows all tracing markers coming from the browser (Microsoft Edge) as well as  *msWriteProfilerMark*\s, which provide precise points for measuring code. To see *msWriteProfilerMark* tracing, scroll down to the  *Generic Events* graph and select **HTML msWriteProfilerMark** from the drop-down menu.
+**Trace Markers** - This section shows all tracing markers coming from the browser (Microsoft Edge), including *msWriteProfilerMark*, which provides precise points for measuring code. To see *msWriteProfilerMark* tracing, scroll down to the  *Generic Events* graph and select **HTML msWriteProfilerMark** from the drop-down menu.
 
 **Thread Delay Analysis** - This tab is often used by Microsoft Edge developers to investigate when one thread is blocked and waiting on another. On rare occasions it might also be useful to web developers.
 
 ## 4. Investigate what's taking up CPU cycles
- The **CPU Usage (Sampled)** table in the *Frame Analysis* tab is likely where most of your analysis will happen. You can expand the various processes to identify the most compute intensive JavaScript and browser code. Often a single bit of JavaScript is responsible for a performance issue, and taking the time to optimize it can make a significant difference.
+ The **CPU Usage (Sampled)** table in the *Frame Analysis* tab is where most of your analysis will likely happen. You can expand the various processes to identify the most compute intensive JavaScript and browser code. Often a single bit of JavaScript is responsible for a performance issue, and taking the time to optimize it can make a significant difference.
 
 ### 5. Drill into any slow-running JavaScript code
 Bottom up DOM call analysis can be useful for identifying the JavaScript responsible for taking up the majority of time during the scenario. This is especially helpful when many top level calls are re-using the same JavaScript libraries.
