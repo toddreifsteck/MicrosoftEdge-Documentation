@@ -18,7 +18,7 @@ Launch WPR and ensure the More options is expanded. Check the Edge Browser and H
 - If a scenario involves navigating to a site, consider beginning the scenario at about:blank. Starting at about:blank will avoid the overhead of the previous page. If it involves navigating away from a site, navigate to about:blank to complete the scenario. This will keep the noise of other sites out of the trace unless the specific interaction between sites is the issue under investigation.
 
 ## 3. Record the scenario
-Click Start to begin recording. You will observe that the tool will report the size of the buffer it is using which can be helpful to understand how large the file generated will be. Execute the scenario that is being measured then click Stop and immediately Save the trace. Saving immediately after stopping will help keep the trace file small.
+Click Start to begin recording. You will observe that the tool will report the size of the buffer it is using which can be helpful to understand how large the file generated will be. Execute the scenario that is being measured. Once the scenario is completed, immediately go back to WPR and click Save to stop the trace. Saving immediately after stopping will help keep the trace file small.
 
 ![Windows Performance Record Start](media/WPRUI-Recording.PNG)
 
